@@ -1,0 +1,14 @@
+{
+  "name": "application",
+  "version": "1.2.0",
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.0",
+    "commit": "ce74fa828c04e67d29516fe57e64b58150be4fc8"
+  },
+  "_source": "git://pswgithub.rds.lexmark.com/ClientFramework/application.git",
+  "_target": "1",
+  "_originalSource": "application",
+  "_direct": true
+}

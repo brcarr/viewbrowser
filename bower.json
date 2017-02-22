@@ -1,0 +1,11 @@
+{
+    "dependencies": {
+        "core": "^1",
+        "controls": "^2",
+        "psw-framework-application-context": "^1",
+        "psw-framework-notifications": "^1"
+    },
+    "name": "psw-brcarr-viewbrowser",
+    "private": true,
+    "version": "0.2.0"
+}

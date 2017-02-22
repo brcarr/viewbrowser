@@ -1,0 +1,20 @@
+{
+    "desktop": [
+        { "name": "hosted", "regex": "hosted" }
+    ],
+
+    "tablet": [
+        { "name": "iPad", "regex": "ipad" },
+        { "name": "androidTablet", "regex": "(?=.*android)(?!.*mobile).*|xoom|i800|gt-p1000|sgh-t849|shw-m180s|kindle" },
+        { "name": "windowsTablet", "regex": "tablet-pc" }
+    ],
+
+    "phone": [
+        { "name": "iPhone", "regex": "iphone" },
+        { "name": "iPod", "regex": "ipod" },
+        { "name": "androidPhone", "regex": "android.*mobile" },
+        { "name": "blackberry", "regex": "blackberry" },
+        { "name": "windowsPhone", "regex": "windows phone" },
+        { "name": "desktop-app", "regex": "perceptive-desktop"}
+    ]
+}

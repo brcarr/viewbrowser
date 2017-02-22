@@ -1,0 +1,237 @@
+.module-viewbrowser {
+    padding: 0;
+
+    .template-view {
+        height: 100%;
+
+        .template-card {
+            padding: 20px;
+
+            p {
+                margin: 0;
+            }
+
+            .tag-panel {
+                margin-top: 10px;
+
+                .badge {
+                    margin: 10px 10px 0 0;
+                }
+
+                .icon-tags {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .landing-page-view, .card-showcase-view {
+        padding: 20px;
+    }
+
+    .pane-container {
+        height: 100%;
+    }
+
+    .nav-pane {
+        background: #f0efef;
+        border-right: 1px solid #e2e2e2;
+    }
+
+    .toolbar-view .toolbar-control {
+        padding: 10px 20px;
+    }
+    
+    .filter-group {
+        //padding: 12px;
+    }
+
+    .list-panel .control-group {
+          float: left;
+          width: 25%;
+          label, p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+    }
+
+    .content-view .grid {
+        height: 100%;
+    }
+
+    .properties-view {
+        border-left: 1px solid #e2e2e2;
+        padding: 10px 20px 20px 20px;
+        overflow: auto;
+        height: 100%;
+    }
+
+    .grid .card-panel .item-container {
+        padding:5px !important;
+    }
+
+    .grid .card.preview-left {
+        border:none;
+        margin-top: 0;
+    }
+
+    .card.preview-left {
+        .content.column.col-7,
+        .summary.col-8 {
+            padding-left:10px;
+        }
+        h1 {
+            padding: 0;
+            margin: 0;
+        }
+        h2 {
+            margin:0;
+        }
+        .thumb {
+            text-align: center;
+            background-color: #F0F0F0;
+            img {
+                height:150px !important;
+                width: auto;
+            }
+        }
+    }
+
+    .grid * {
+        vertical-align: top;
+    }
+
+    .grid {
+        .list-panel {
+            h2 {
+                margin:40px 0;
+            }
+        .thumbnail {
+            padding:10px 10px 10px 0;
+            img {
+                width:100%;
+            }
+        }
+
+        }
+    }
+}
+
+.phone .module-templates {
+    .nav-pane {
+        background: transparent;
+        border-right: none;
+    }
+}
+
+.application-context .card.preview-left {
+    .content.column.col-7,
+    .summary.col-8 {
+        padding-left:10px;
+    }
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+    h2 {
+        margin:0;
+    }
+    .thumb {
+        text-align: center;
+        background-color: #F0F0F0;
+        img {
+            height:150px !important;
+            width: auto;
+        }
+    }
+}
+
+.animated {
+    -webkit-animation-duration: .1s;
+    animation-duration: .1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated:nth-child(2) {
+    -webkit-animation-delay: .05s;
+    animation-delay: .05s;
+}
+
+.animated:nth-child(3) {
+    -webkit-animation-delay: .1s;
+    animation-delay: .1s;
+}
+
+.animated:nth-child(4) {
+    -webkit-animation-delay: .15s;
+    animation-delay: .15s;
+}
+
+.animated:nth-child(5) {
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+}
+
+.animated:nth-child(6) {
+    -webkit-animation-delay: .25s;
+    animation-delay: .25s;
+}
+
+.animated:nth-child(7) {
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.animated:nth-child(8) {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
+}
+
+.animated:nth-child(9) {
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+@-webkit-keyframes bounceInLeft {
+    0%, 60%, 75%, 90%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-20px, 0, 0);
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes bounceInLeft {
+    0%, 60%, 75%, 90%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-20px, 0, 0);
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.bounce-in-left {
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+}

@@ -1,0 +1,57 @@
+{
+    "viewbrowser": {
+        "title": "View Browser",
+        
+        "alerts": {
+            "noViewSelected": "Please select a view from the navigation pane on the left."
+        },
+        
+        "filterFields": {
+            "document": {
+                "anyDocKey": "Any document key",
+                "docID": "Document ID",
+                "docType": "Document type",
+                "drawer": "Drawer",
+                "field1": "Field1",
+                "field2": "Field2",
+                "field3": "Field3",
+                "field4": "Field4",
+                "field5": "Field5",
+                "pages": "Pages",
+                "name": "Document name",
+                "creationDate": "Creation date",
+                "creationUser": "Creatied by"
+            },
+            
+            "folder": {
+                "folderID": "Folder ID",
+                "folderName": "Folder name",
+                "folderStatus": "Folder status",
+                "folderType": "Folder type"
+            },
+            
+            "task": {
+                "status": "Status",
+                "taskType": "Task type",
+                "completionMethod": "Completion method",
+                "taskID": "Task ID",
+                "instructions": "Task instructions",
+                "comments": "Task comments",
+                "templateName": "Task template name",
+                "assignedTo": "Assigned to",
+                "assignmentDate": "Assignment date",
+                "comments": "Task comments",
+                "completedBy": "Completed by",
+                "completedDate": "Completion date",
+                "daysUntilDue": "Days until due",
+                "dueDate": "Due date"
+            }
+        },
+        
+        "mainView": {
+            "configContextError": "No View Browser context settings found in config.json",
+            "configContextSourceWarning": "Unable to locate any context settings for source type: ",
+            "noMatchingProperties": "Unable to locate matching properties in the context objext provided by "
+        }
+    } 
+}

@@ -1,0 +1,22 @@
+# Gradle
+.gradle
+
+# Generic builds
+build/
+bin/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Git
+*.orig
+
+# Javascript builds
+build_working/
+build_output/

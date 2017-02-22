@@ -1,0 +1,66 @@
+import groovy.json.JsonSlurper
+
+apply plugin: 'maven-publish'
+apply plugin: 'js-release'
+
+// Build properties
+def config = new JsonSlurper().parseText(file('package.json').text)
+def applicationName = config['name']
+def applicationVersion = config['version']
+
+// Publish properties
+ext.artifactoryUrl = 'http://devrepositoryd00.pvi.com:8181/content'
+ext.repositoryName = 'Perceptive_External'
+ext.groupId = 'com.perceptivesoftware.client.apps'
+ext.artifactoryUser = 'jenkins_publisher'
+ext.artifactoryPass = System.getenv().artifactory_push_password
+
+buildscript {
+    repositories {
+        maven {
+            url "http://devrepositoryd00.pvi.com:8181/content/FOSS_Internal"
+        }
+        maven {
+            url "http://devrepositoryd00.pvi.com:8181/content/FOSS_External"
+        }
+        maven {
+            url "http://devrepositoryd00.pvi.com:8181/content/Perceptive_Internal"
+        }
+    }
+
+    dependencies {
+        classpath(group: 'com.perceptivesoftware', name: 'js-release', version: '0.4.+')
+    }
+}
+
+publishing {
+    publications {
+        application(MavenPublication) {
+            artifact pack {
+            }
+            artifactId 'application'
+            groupId project.groupId
+            version applicationVersion
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username artifactoryUser
+                password  artifactoryPass
+            }
+            url "${artifactoryUrl}/${repositoryName}"
+        }
+    }
+}
+
+def packageInfo = new JsonSlurper().parseText(file('package.json').text)
+version = packageInfo['version']
+jsRelease.gitRepoName = packageInfo['name'] + ".git"
+
+task pack(type: Zip, dependsOn: 'verifyBowerSync') {
+	from file('src')
+    from file('package.json')
+	destinationDir getBuildDir()
+	baseName applicationName
+}

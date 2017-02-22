@@ -1,0 +1,8 @@
+{
+	"brand": {
+        "productName": "perceptive",
+        "loginLogo": "packages/shell/src/themes/base/shellComponents/img/perceptive_login_258.png",
+        "loginLogoMobile": "packages/shell/src/themes/base/shellComponents/img/perceptive_login_258.png",
+        "headerLogo": "packages/shell/src/themes/base/shellComponents/img/perceptive_header_96.png"
+	}
+}

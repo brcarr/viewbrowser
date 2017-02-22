@@ -1,0 +1,44 @@
+import groovy.json.JsonSlurper
+
+buildscript {
+    repositories {
+        maven {
+            url "http://devrepositoryd00.pvi.com:8181/content/FOSS"
+        }
+        maven {
+            url "http://devrepositoryd00.pvi.com:8181/content/Perceptive_Internal"
+        }
+    }
+    dependencies {
+        classpath(group: 'com.perceptivesoftware', name: 'JSBuildPlugin', version: '0.9.+')
+        classpath(group: 'com.perceptivesoftware', name: 'js-release', version: '0.4.+')
+    }
+}
+
+apply plugin: 'JSBuildPlugin'
+apply plugin: 'js-release'
+
+def buildNumber = 0
+def env = System.getenv()
+buildNumber = env.BUILD_NUMBER?.toInteger()
+if (buildNumber == null) {
+    buildNumber = 0
+}
+
+project.jsConfig {
+    sourceDir = "src"
+    buildToolsDir = "build"
+    buildWorkingDir = "build_working"
+    buildOutputDir = "build_output"
+    libraryName = "psw-brcarr-viewbrowser"
+    copySourceDestination = "${buildWorkingDir}/packages/${libraryName}"
+    testLibVersion = "0.1.0"
+    buildToolsVersion = "0.1.0"
+
+    def packageInfo = new JsonSlurper().parseText(file('package.json').text)
+    buildVersion = "${packageInfo['version']}+${buildNumber}"
+}
+
+project.jsRelease {
+    projectName = "psw-brcarr-viewbrowser"
+}

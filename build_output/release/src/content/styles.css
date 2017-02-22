@@ -1,0 +1,114 @@
+.module-viewbrowser {
+  padding: 0;
+}
+.module-viewbrowser .template-view {
+  height: 100%;
+}
+.module-viewbrowser .template-view .template-card {
+  padding: 20px;
+}
+.module-viewbrowser .template-view .template-card p {
+  margin: 0;
+}
+.module-viewbrowser .template-view .template-card .tag-panel {
+  margin-top: 10px;
+}
+.module-viewbrowser .template-view .template-card .tag-panel .badge {
+  margin: 10px 10px 0 0;
+}
+.module-viewbrowser .template-view .template-card .tag-panel .icon-tags {
+  margin-right: 5px;
+}
+.module-viewbrowser .landing-page-view,
+.module-viewbrowser .card-showcase-view {
+  padding: 20px;
+}
+.module-viewbrowser .pane-container {
+  height: 100%;
+}
+.module-viewbrowser .nav-pane {
+  background: #f0efef;
+  border-right: 1px solid #e2e2e2;
+}
+.module-viewbrowser .toolbar-view .toolbar-control {
+  padding: 10px 20px;
+}
+.module-viewbrowser .list-panel .control-group {
+  float: left;
+  width: 25%;
+}
+.module-viewbrowser .list-panel .control-group label,
+.module-viewbrowser .list-panel .control-group p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.module-viewbrowser .content-view .grid {
+  height: 100%;
+}
+.module-viewbrowser .properties-view {
+  border-left: 1px solid #e2e2e2;
+  padding: 10px 20px 20px 20px;
+  overflow: auto;
+  height: 100%;
+}
+.module-viewbrowser .grid .card-panel .item-container {
+  padding: 5px !important;
+}
+.module-viewbrowser .grid .card.preview-left {
+  border: none;
+  margin-top: 0;
+}
+.module-viewbrowser .card.preview-left .content.column.col-7,
+.module-viewbrowser .card.preview-left .summary.col-8 {
+  padding-left: 10px;
+}
+.module-viewbrowser .card.preview-left h1 {
+  padding: 0;
+  margin: 0;
+}
+.module-viewbrowser .card.preview-left h2 {
+  margin: 0;
+}
+.module-viewbrowser .card.preview-left .thumb {
+  text-align: center;
+  background-color: #F0F0F0;
+}
+.module-viewbrowser .card.preview-left .thumb img {
+  height: 150px !important;
+  width: auto;
+}
+.module-viewbrowser .grid * {
+  vertical-align: top;
+}
+.module-viewbrowser .grid .list-panel h2 {
+  margin: 40px 0;
+}
+.module-viewbrowser .grid .list-panel .thumbnail {
+  padding: 10px 10px 10px 0;
+}
+.module-viewbrowser .grid .list-panel .thumbnail img {
+  width: 100%;
+}
+.phone .module-templates .nav-pane {
+  background: transparent;
+  border-right: none;
+}
+.application-context .card.preview-left .content.column.col-7,
+.application-context .card.preview-left .summary.col-8 {
+  padding-left: 10px;
+}
+.application-context .card.preview-left h1 {
+  padding: 0;
+  margin: 0;
+}
+.application-context .card.preview-left h2 {
+  margin: 0;
+}
+.application-context .card.preview-left .thumb {
+  text-align: center;
+  background-color: #F0F0F0;
+}
+.application-context .card.preview-left .thumb img {
+  height: 150px !important;
+  width: auto;
+}

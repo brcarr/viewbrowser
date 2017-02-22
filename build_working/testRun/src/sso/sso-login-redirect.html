@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>SSO Redirect</title>
+    <script type="text/javascript" charset="utf-8">
+
+        //Turn this url: http://example.com/perceptive/sso/sso-login-redirect.html?_=1402429556772&redirect=sampleModule/view/SysDocumentsAll 
+        //Into this: "http://example.com/perceptive/#sampleModule/view/SysDocumentsAll"
+
+        var url = window.location.href;
+        var redirectToken = "redirect=";
+
+        var ssoStartsAt = url.indexOf('sso/sso-login-redirect.html');
+        var redirectPathStartsAt = url.indexOf(redirectToken) + redirectToken.length;
+
+        var baseUrl = url.substr(0, ssoStartsAt); //Get the base url, up to the sso/sso-login-redirect.html
+        var redirectPath = url.substr(redirectPathStartsAt, url.length - redirectPathStartsAt); //Everything after the timestamp and redirect=
+
+        var newUrl = baseUrl + '#' + redirectPath;
+        window.location.assign(newUrl);
+    </script>
+</head>
+</html>

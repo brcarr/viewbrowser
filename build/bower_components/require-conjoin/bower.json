@@ -1,0 +1,11 @@
+{
+  "name": "require-conjoin",
+  "version": "0.0.1",
+  "description": "RequireJs plugin",
+  "main": ["src/require.json", "src/require-platform", "src/require-template"],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "*gradle*"
+  ]
+}

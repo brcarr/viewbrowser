@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Event Log Viewer</title>
+	<script type="text/javascript" src="lib/require.js"></script>
+	<script type="text/javascript" src="packages/core/core.js"></script>
+	<script type="text/javascript" src="lib/jquery-2.1.0.js"></script>
+
+	<script>
+	    $(document).ready(function () {
+	        if (document.location.href.match(/\?clear/)) {
+	            var deleteRequest = indexedDB.deleteDatabase('EventLog');
+	            deleteRequest.onblocked = function (e) {
+	                var msg = e.target.webkitErrorMessage || e;
+	                throw msg;
+	            };
+	            deleteRequest.onsuccess = function (e) {
+	                console.log('deleted');
+	            };
+
+	            $('body').html('<h3>Event log database successfully cleared</h3>');
+	            return;
+	        }
+
+            // TODO: rewrite this page to integrate with the system better
+			require(['packages/core/src/indexedDBHandler'], function(DbHandler) {
+				var schema = {
+					logEntry: { keyPath: 'timestamp' }
+				};
+
+				var db = new DbHandler('EventLog', { schema: schema });
+				db.open(function () {
+				    var htmlOutput = [];
+				    var logLevels = ['None', 'Verbose', 'Info', 'Warning', 'Error', 'Critical'];
+				    db.forEach('logEntry', function (e) {
+				        var time = e.object.timestamp.toString().replace(/[TZ]/g, ' ');
+				        var severity = logLevels[e.object.verbosity];
+				        htmlOutput.push('<tr><td>' + time + '</td><td>' + severity + '</td><td>' + e.object.content + '</td><td>' + e.object.loggingContext + '</td></tr>');
+				    }).then(function () {
+				        $('#logOutput').append($(htmlOutput.join('')));
+				    });
+				});
+			});
+
+			$('#clearBtn').click(function () {
+			    if (confirm("Are you sure you want to delete your event log?", "Confirm Event Log Deletion"))
+			    {
+			        document.location.replace('?clear');
+			    }
+			});
+		});
+
+		function clearOutput() {
+			$('#logOutput').html($('#logOutput #headers'));
+		};
+	</script>
+
+	<style>
+	    body {
+			font-family: arial;
+	    }
+
+		#logOutput {
+			border: 1px solid black;
+            border-collapse:collapse;
+		}
+
+		td {
+			border: 0;
+            border-left:dotted 1px #d8d8d8;
+		}
+
+		tr:nth-child(even) {
+			background-color: #eee;
+		}
+
+		th {
+			font-weight: bold;
+			text-align: left;
+			background-color: silver;
+		}
+
+	    td, th {
+            padding:5px 10px;
+	    }
+
+        td:first-child {
+            white-space:nowrap;
+        }
+
+	    #clearBtn {
+            border:solid 1px gray;
+            font-size:14px;
+            border-radius:4px;
+            padding:5px;
+            background-color:#eee;
+            cursor:pointer;
+	    }
+
+	    #clearBtn:hover {
+            border-width:2px;
+            padding:4px;
+	    }
+	</style>
+</head>
+<body>
+	<table id="logOutput">
+		<tr>
+			<th>Timestamp</th>
+			<th>Severity</th>
+			<th>Message</th>
+			<th>Context</th>
+		</tr>
+	</table>
+
+    <p>
+        <a id="clearBtn">Clear Event Log</a>
+    </p>
+</body>
+</html>

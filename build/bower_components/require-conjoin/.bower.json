@@ -1,0 +1,25 @@
+{
+  "name": "require-conjoin",
+  "version": "0.0.1",
+  "description": "RequireJs plugin",
+  "main": [
+    "src/require.json",
+    "src/require-platform",
+    "src/require-template"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "*gradle*"
+  ],
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "e3a0f3eeba597d7a2bec2768ed82c2860d199130"
+  },
+  "_source": "git://pswgithub.rds.lexmark.com/ClientFramework/require-conjoin.git",
+  "_target": "0.0",
+  "_originalSource": "require-conjoin",
+  "_direct": true
+}

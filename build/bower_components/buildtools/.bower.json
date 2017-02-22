@@ -1,0 +1,14 @@
+{
+  "name": "buildtools",
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.0",
+    "commit": "3e2faca9f2c459f55b8d5e7dba15db168613368a"
+  },
+  "_source": "git://pswgithub.rds.lexmark.com/ClientFramework/buildtools.git",
+  "_target": "0.2",
+  "_originalSource": "buildtools",
+  "_direct": true
+}

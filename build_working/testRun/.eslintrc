@@ -1,0 +1,13 @@
+{
+"env": {
+        "browser": true,
+        "amd": true
+    },
+    
+    "rules": {
+        "eqeqeq": [2, "smart"],
+        "curly": [2, "multi"],
+        "quotes": [2, "single"],
+        "no-trailing-spaces", 0
+    }
+}

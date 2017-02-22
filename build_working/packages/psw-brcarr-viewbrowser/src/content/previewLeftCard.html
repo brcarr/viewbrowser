@@ -1,0 +1,24 @@
+{{#each .}}
+<div class="card preview-left" id="{{docId}}">
+    <div class="layout-row">
+        <div class="col-4 preview thumb">
+            <a href="#document/view/SysDocumentsAll/docId/{{id}}" target="_blank" title="Click to view document" data-tooltip-direction="left">
+                <img src="{{thumb}}"/>
+            </a>
+        </div>
+        <div class="summary col-8">
+            <div class="layout-row">
+                <h1>{{name}}</h1>
+                <div>
+                    <span class="meta-label">{{cardFields.[7].name}}</span>
+                    <span>{{cardFields.[7].value}}</span>
+                </div>
+                <div>
+                    <span class="meta-label">{{cardFields.[9].name}}</span>
+                    <span>{{cardFields.[9].value}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

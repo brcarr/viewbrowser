@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+
+        <!--[if IE]>
+            <link rel="stylesheet" type="text/css" href="packages/shell/src/themes/base/ie.css" />
+        <![endif]-->
+        <!--[if IE 9]>
+            <link rel="stylesheet" type="text/css" href="packages/shell/src/themes/base/ie9.css" />
+        <![endif]-->
+
+        <link rel="shortcut icon" type="image/ico" href="packages/shell/src/themes/base/img/favicon.ico"/>
+        
+        <!-- Web App Icons -->
+        <link rel="apple-touch-icon-precomposed" href="packages/shell/src/themes/base/img/appIcons/Icon-60.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="packages/shell/src/themes/base/img/appIcons/Icon-76.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="packages/shell/src/themes/base/img/appIcons/Icon-60@2x.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="packages/shell/src/themes/base/img/appIcons/Icon-76@2x.png"/>
+        
+        <!-- Web App Startup Images -->
+        <!-- iPad retina portrait startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/ipad@2x-portrait_1536x2008.png" 
+            media="(device-width: 768px) and (device-height: 1024px)
+                 and (-webkit-device-pixel-ratio: 2)
+                 and (orientation: portrait)"
+            rel="apple-touch-startup-image">
+ 
+        <!-- iPad retina landscape startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/ipad@2x-landscape_2048x1496.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                     and (-webkit-device-pixel-ratio: 2)
+                     and (orientation: landscape)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPad non-retina portrait startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/ipad-portrait_768x1004.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                     and (-webkit-device-pixel-ratio: 1)
+                     and (orientation: portrait)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPad non-retina landscape startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/ipad-landscape_1024x748.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                     and (-webkit-device-pixel-ratio: 1)
+                     and (orientation: landscape)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPhone 6 Plus portrait startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/iphone6p-portrait_1242x2148.png"
+              media="(device-width: 414px) and (device-height: 736px)
+                     and (-webkit-device-pixel-ratio: 3)
+                     and (orientation: portrait)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPhone 6 Plus landscape startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/iphone6p-landscape_2208x1182.png"
+              media="(device-width: 414px) and (device-height: 736px)
+                     and (-webkit-device-pixel-ratio: 3)
+                     and (orientation: landscape)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPhone 6 startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/iphone6_750x1294.png"
+              media="(device-width: 375px) and (device-height: 667px)
+                     and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPhone 5 startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/iphone5_640x1096.png"
+              media="(device-width: 320px) and (device-height: 568px)
+                     and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPhone < 5 retina startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/iphone4@2x_640x920.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                     and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+     
+        <!-- iPhone < 5 non-retina startup image -->
+        <link href="packages/shell/src/themes/base/img/launchScreens/iphone4_320x460.png"
+              media="(device-width: 320px) and (device-height: 480px)
+                     and (-webkit-device-pixel-ratio: 1)"
+              rel="apple-touch-startup-image">
+        
+        <script>
+            var less = {
+                relativeUrls: true
+            };
+            // In IE9, window.console does not exist unless F12 tools are open.
+            // In addition, if F12 tools ARE open, typeof console.log/error/etc returns object instead of function, which is problematic for function binding
+            // See http://whattheheadsaid.com/2011/04/internet-explorer-9s-problematic-console-object
+            if (!(window.console && window.console.log)) {
+                window.console = {};
+                window.console.log = window.console.error = function() {};
+            } else if (window.console && window.console.log && typeof window.console.log === 'object') {
+                ['log', 'error'].forEach(function(fn) {
+                    var proxy = window.console[fn];
+                    window.console[fn] = function() {
+                        proxy([].slice.call(arguments));
+                    }
+                });
+            }
+        </script>
+        <script type="text/javascript" src="lib/require.js"></script>
+
+        <script type="text/javascript">
+            requirejs.onError = function (err) {
+                console.log('Error of type: "' + err.requireType + '"\n\nRequireJS could not load ' + err.requireModules);
+                err.stack && console.log(err.stack);
+            };
+
+            require(['requireConfig'], function () {
+                require(['packages/core/core'], function() {
+                    require(['packages/core/src/app'], function(App) {
+                        new App();
+                    });
+                });
+            });
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="packages/shell/src/themes/base/print.css" media="print" />
+    </head>
+    <body id="body">
+        <div id="container" class="container"></div>
+    </body>
+</html>
